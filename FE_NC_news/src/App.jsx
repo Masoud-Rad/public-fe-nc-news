@@ -1,6 +1,6 @@
-import { useState } from 'react'
+const cors = require('cors');
 import './App.css'
-
+app.use(cors());
 function App() {
  
 
