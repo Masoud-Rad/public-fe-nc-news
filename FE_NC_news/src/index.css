@@ -6,6 +6,12 @@ section {
     margin: 10px auto;
     box-shadow: 1px 1px 1px 1px rgb(100, 100, 102);
 }
+.link {
+    margin: 15px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(100, 100, 102);
+}
+
 button {
 
     margin: 5px;

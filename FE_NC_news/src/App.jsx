@@ -13,7 +13,7 @@ import Home from './components/Home'
 import ShowArticle from './components/ShowArticle'
 import ShowArticleById from "./components/ShowArticleById"
 import CommentsList from './components/CommentsList';
-
+import AddComment from './components/AddComment';
 
 
 
@@ -52,6 +52,7 @@ if(isLoading){
         <Route path='/articles'  element={<ArticlesList allArticles={articles}/>} />
         <Route path='/articles/:article_id'  element={<ShowArticleById />} />
         <Route path='/articles/:article_id/comments'  element={<CommentsList />} />
+        <Route path='/articles/:article_id/add-comment'  element={<AddComment />} />
       </Routes>
        
    

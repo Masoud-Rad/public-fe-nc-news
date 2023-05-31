@@ -49,8 +49,8 @@ return <> <div>
                                     <p>comment_count:   {article.comment_count}</p>
                                     <p>{article.body}</p>
                                     <button onClick={incVotes}>votes: {article.votes+incVotesValue}</button>
-                                    <Link to= {`/articles/${article_id}/comments`}>Comments</Link>
-                                    
+                                    <Link className="link" to= {`/articles/${article_id}/comments`}>Comments</Link>
+                                    <Link className="link" to= {`/articles/${article_id}/add-comment`}>ADD Comments</Link>
 
                                 </div>
 
