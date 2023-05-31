@@ -9,7 +9,7 @@ import ArticlesList from './components/ArticlesList'
 import TopicList from './components/TopicList'
 import Home from './components/Home'
 import ShowArticle from './components/ShowArticle'
-
+import ShowArticleById from "./components/ShowArticleById"
 import { fetchArticles } from './utils';
 
 
@@ -21,14 +21,14 @@ function App() {
   const [isLoading, setIsLoading] =useState(true)
 
   useEffect(()=>{
-      if(articles.length===0){
+     
         fetchArticles().then((articlesData)=>{
 
           setArticles(articlesData.articles);
           
             setIsLoading(false);
           })
-      }
+      
         
 }, [])
 
@@ -48,7 +48,7 @@ if(isLoading){
         <Route path='/'  element={<Home allArticles={articles}/>} />
         <Route path='/topics'  element={<TopicList/>} />
         <Route path='/articles'  element={<ArticlesList allArticles={articles}/>} />
-        <Route path='/articles/:article_id'  element={<ShowArticle/>} />
+        <Route path='/articles/:article_id'  element={<ShowArticleById />} />
       </Routes>
        
    
