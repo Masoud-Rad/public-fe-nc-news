@@ -4,5 +4,19 @@ section {
     background-color: rgb(224, 218, 218);
     border-radius: 10px;
     margin: 10px auto;
-    ox-shadow: 1px 1px 1px 1px rgb(100, 100, 102);
+    box-shadow: 1px 1px 1px 1px rgb(100, 100, 102);
+}
+
+#navSection {
+    height: 20px;
+}
+#navSection div{
+    float: left;
+    width: 25%;
+}
+
+#navSection div a{
+    box-shadow: 1px 1px 1px 1px rgb(100, 100, 102);
+    padding: 10px;
+    border-radius: 30px;
 }
