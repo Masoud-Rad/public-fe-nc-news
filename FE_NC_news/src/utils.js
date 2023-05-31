@@ -35,6 +35,22 @@ export const fetchArticles = ()=>{
   }
 
 
+  export const patchArticle = (article_id,patchBody)=>{
+
+
+    return  ncNewsApi.patch(`/articles/${article_id}`, patchBody)
+    .then((response)=> {
+      return(response.data);
+    })
+    .catch((error) =>{
+      console.log(error.response);
+    })
+ 
+  }
+
+
+
+
   //-------------------------------------------Comments----------------------
 
   export const fetchComments= (article_id)=>{
