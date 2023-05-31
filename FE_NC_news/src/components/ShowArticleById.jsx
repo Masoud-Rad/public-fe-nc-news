@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState , useEffect} from 'react'
+import { Link } from "react-router-dom";
 
 import {fetchArticleById} from '../utils'
 function ShowArticleById (){
@@ -30,6 +31,8 @@ return <> <div>
                                     <p>comment_count:   {article.comment_count}</p>
                                     <p>{article.body}</p>
                                     <p>votes: {article.votes}</p>
+                                    <Link to= {`/articles/${article_id}/comments`}>Comments</Link>
+
                                 </div>
 
                                 </>

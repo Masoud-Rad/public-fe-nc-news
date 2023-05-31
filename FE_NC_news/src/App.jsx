@@ -3,6 +3,8 @@ import { useState , useEffect} from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
+import { fetchArticles } from './utils';
+
 import Header from './components/Header';
 import Nav from './components/Nav';
 import ArticlesList from './components/ArticlesList'
@@ -10,7 +12,7 @@ import TopicList from './components/TopicList'
 import Home from './components/Home'
 import ShowArticle from './components/ShowArticle'
 import ShowArticleById from "./components/ShowArticleById"
-import { fetchArticles } from './utils';
+import CommentsList from './components/CommentsList';
 
 
 
@@ -49,6 +51,7 @@ if(isLoading){
         <Route path='/topics'  element={<TopicList/>} />
         <Route path='/articles'  element={<ArticlesList allArticles={articles}/>} />
         <Route path='/articles/:article_id'  element={<ShowArticleById />} />
+        <Route path='/articles/:article_id/comments'  element={<CommentsList />} />
       </Routes>
        
    
