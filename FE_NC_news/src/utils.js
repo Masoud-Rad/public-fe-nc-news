@@ -64,3 +64,16 @@ export const fetchArticles = ()=>{
     })
 
   }
+
+  //--------------------------------Comments-----------------------------------
+
+export const addNewComment = (article_id,postBody)=>{
+
+  return  ncNewsApi.post(`/articles/${article_id}/comments`, postBody)
+    .then((response)=> {
+      return(response.data);
+    })
+    .catch((error) =>{
+      console.log(error.response);
+    })
+}
