@@ -19,7 +19,16 @@ export const fetchArticles = ()=>{
   
   }
 
+export const fetchArticlesByTopic=(topic)=>{
 
+  return  ncNewsApi.get(`/articles?topic=${topic}`)
+  .then((response)=> {
+    return(response.data);
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
+}
 
   export const fetchArticleById = (article_id)=>{
 
@@ -65,7 +74,7 @@ export const fetchArticles = ()=>{
 
   }
 
-  //--------------------------------Comments-----------------------------------
+ 
 
 export const addNewComment = (article_id,postBody)=>{
 
@@ -76,4 +85,17 @@ export const addNewComment = (article_id,postBody)=>{
     .catch((error) =>{
       console.log(error.response);
     })
+}
+
+//-----------------------------Topics-----------------------------------
+
+export const fetchTopics = ()=>{
+
+  return  ncNewsApi.get('/topics')
+  .then((response)=> {
+    return(response.data);
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
 }

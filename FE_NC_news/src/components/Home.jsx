@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom";
 
 function Home({allArticles}){
     return (<>
@@ -9,7 +9,7 @@ function Home({allArticles}){
     allArticles.map((article) => {
                 return (
                         <li key={article.article_id} > 
-                            <h4>{article.title}</h4>
+                        <Link to= {`/articles/${article.article_id}`}><h4>Tilte:  {article.title}</h4></Link>
                         </li>
                 )
             }

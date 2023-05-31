@@ -8,9 +8,10 @@ import { fetchArticles } from './utils';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import ArticlesList from './components/ArticlesList'
-import TopicList from './components/TopicList'
+import TopicsList from './components/TopicsList'
 import Home from './components/Home'
-import ShowArticle from './components/ShowArticle'
+import ArticlesListFilterdByTopic from './components/ArticlesListFilterdByTopic'
+
 import ShowArticleById from "./components/ShowArticleById"
 import CommentsList from './components/CommentsList';
 import AddComment from './components/AddComment';
@@ -35,7 +36,11 @@ function App() {
 }, [])
 
 if(isLoading){
-  return <h2>Loading...!</h2>
+  return<>
+  <Header />
+      <Nav/>
+  <h2>Loading...!</h2>
+  </>
 } 
 
   return (
@@ -48,7 +53,8 @@ if(isLoading){
       
       <Routes>
         <Route path='/'  element={<Home allArticles={articles}/>} />
-        <Route path='/topics'  element={<TopicList/>} />
+        <Route path='/topics'  element={<TopicsList/>} />
+        <Route path='/articles-by-topic/:topicName'  element={<ArticlesListFilterdByTopic/>} />
         <Route path='/articles'  element={<ArticlesList allArticles={articles}/>} />
         <Route path='/articles/:article_id'  element={<ShowArticleById />} />
         <Route path='/articles/:article_id/comments'  element={<CommentsList />} />
