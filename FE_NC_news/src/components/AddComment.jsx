@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
 
 import {addNewComment} from '../utils'
-function AddComment() {
+function AddComment({setComments}) {
 
     const {article_id} = useParams()
 
@@ -24,10 +24,10 @@ const [commentBody, setCommentBody]=useState("")
         event.preventDefault()
 
         addNewComment(article_id ,newComment).then((data)=>{
-        
+            console.log(data.addedComment)
             setCommentBody("");
             setUserName("");
-           
+            setComments((currComments)=>[ data.addedComment, ...currComments])
         })
         .catch((err)=>{
             console.log(err)
@@ -37,7 +37,7 @@ const [commentBody, setCommentBody]=useState("")
    
     return <>
     
-    <form  onSubmit={handleSubmit}>
+    <form id="addComment-form" onSubmit={handleSubmit}>
 
 
     <h4> NEW Comment</h4>

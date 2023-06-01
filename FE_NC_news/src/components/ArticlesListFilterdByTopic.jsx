@@ -12,7 +12,7 @@ const [filteredArticles, setFilteredArticles]= useState([]);
 
   useEffect(()=>{
      
-        fetchArticlesByTopic(topicName).then((articlesData)=>{
+    fetchArticlesByTopic(topicName).then((articlesData)=>{
 
             setFilteredArticles(articlesData.articles);
           
