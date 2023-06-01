@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState , useEffect} from 'react'
 
+import AddComment from './AddComment';
+
 
 import {fetchComments} from '../utils'
 
@@ -26,6 +28,8 @@ function CommentsList(){
 
 
 return (<>
+
+    <AddComment setComments={setComments}/>
     <ul>
         
     {

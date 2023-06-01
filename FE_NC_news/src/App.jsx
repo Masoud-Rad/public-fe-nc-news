@@ -14,18 +14,22 @@ import ArticlesListFilterdByTopic from './components/ArticlesListFilterdByTopic'
 
 import ShowArticleById from "./components/ShowArticleById"
 import CommentsList from './components/CommentsList';
-import AddComment from './components/AddComment';
+
 
 
 
 function App() {
- 
+
+  const [sortBy,setSortBY]=useState("created_at")
+  const [orderBy,setOrderBY]=useState("ASC")
   const [articles, setArticles]= useState([])
   const [isLoading, setIsLoading] =useState(true)
-
+ 
+  console.log("order", orderBy)
+  
   useEffect(()=>{
      
-        fetchArticles().then((articlesData)=>{
+        fetchArticles(sortBy,orderBy).then((articlesData)=>{
 
           setArticles(articlesData.articles);
           
@@ -33,7 +37,7 @@ function App() {
           })
       
         
-}, [])
+}, [sortBy,orderBy])
 
 if(isLoading){
   return<>
@@ -55,10 +59,9 @@ if(isLoading){
         <Route path='/'  element={<Home allArticles={articles}/>} />
         <Route path='/topics'  element={<TopicsList/>} />
         <Route path='/articles-by-topic/:topicName'  element={<ArticlesListFilterdByTopic/>} />
-        <Route path='/articles'  element={<ArticlesList allArticles={articles}/>} />
+        <Route path='/articles'  element={<ArticlesList allArticles={articles} setSortBY={setSortBY} setOrderBY={setOrderBY}/>} />
         <Route path='/articles/:article_id'  element={<ShowArticleById />} />
         <Route path='/articles/:article_id/comments'  element={<CommentsList />} />
-        <Route path='/articles/:article_id/add-comment'  element={<AddComment />} />
       </Routes>
        
    

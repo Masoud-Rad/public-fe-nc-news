@@ -44,13 +44,13 @@ return <h2>Loading...!</h2>
 
 return <> <div> 
                                     <h4>Tilte:  {article.title}</h4>
-                                    <h5>Topic: {article.topic}</h5>
+                                    <h5>Topic:  <Link to={`/articles-by-topic/${article.topic}`}>{article.topic}</Link></h5>
                                     <img src= {article.article_img_url} alt="article's img" ></img>
                                     <p>comment_count:   {article.comment_count}</p>
                                     <p>{article.body}</p>
                                     <button onClick={incVotes}>votes: {article.votes+incVotesValue}</button>
                                     <Link className="link" to= {`/articles/${article_id}/comments`}>Comments</Link>
-                                    <Link className="link" to= {`/articles/${article_id}/add-comment`}>ADD Comments</Link>
+                                    
 
                                 </div>
 

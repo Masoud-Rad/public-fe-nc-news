@@ -7,16 +7,17 @@ const ncNewsApi = axios.create({
 
 //--------------------------------Articles---------------------
 
-export const fetchArticles = ()=>{
+export const fetchArticles = (sortBy="created_at",orderBy="ASC")=>{
 
-    return  ncNewsApi.get('/articles')
-    .then((response)=> {
-      return(response.data);
-    })
-    .catch((error) =>{
-      console.log(error);
-    })
-  
+
+  return  ncNewsApi.get(`/articles?sort_by=${sortBy}&order_by=${orderBy}`)
+  .then((response)=> {
+    return(response.data);
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
+
   }
 
 export const fetchArticlesByTopic=(topic)=>{

@@ -1,10 +1,15 @@
-import ShowArticle from "./ShowArticle";
 
-function ArticlesList({allArticles}){
+import ShowArticle from "./ShowArticle";
+import SortArticles from "./SortArticles"
+function ArticlesList({allArticles,setSortBY, setOrderBY}){
+
+   
 
     return (<>
+  
+        
+        <SortArticles setSortBY={setSortBY} setOrderBY={setOrderBY} />
         <ul>
-            
         {
         allArticles.map((article) => {
                     return (
