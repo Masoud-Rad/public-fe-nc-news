@@ -36,15 +36,17 @@ return (<>
     comments.map((comment) => {
                 return (
                     <li key={comment.comment_id}> 
-                                       <p>{comment.body}</p>
+                    <section>
+                    <p>{comment.body}</p>
                                         <h6>Aothor: {comment.author}</h6>
                 
                                         <p>Date:   {comment.created_at}</p>
                                         
                                         <p>votes: {comment.votes}</p>
-                                        
+
+                    </section>
     
-                                    </li>
+                  </li>
                 )
             }
             )

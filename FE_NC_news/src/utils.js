@@ -100,3 +100,17 @@ export const fetchTopics = ()=>{
     console.log(error);
   })
 }
+
+//--------------------------------------Users----------------------------------
+
+export const fetchUserByUsername=(userName)=>{
+
+ 
+  return  ncNewsApi.get(`/users?username=${userName}`)
+  .then((response)=> {
+    return(response.data.users);
+  })
+  .catch((error) =>{
+    return(error.response.status);
+  })
+}
