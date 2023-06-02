@@ -8,7 +8,9 @@ function AddComment({setComments}) {
 
     const [commentBody, setCommentBody]=useState("")
     const [userName,setUserName]=useState("")
-    
+
+    const [wrongUserClass,setWrongUserClass]=useState("wrongUser-PtagClass")
+
 
 
     
@@ -24,15 +26,19 @@ function AddComment({setComments}) {
     function handleSubmit(event) {
         event.preventDefault()
 
-        addNewComment(article_id ,newComment).then((data)=>{
-            console.log(data.addedComment)
-            setCommentBody("");
-            setUserName("");
-            setComments((currComments)=>[ data.addedComment, ...currComments])
+        addNewComment(article_id ,newComment).then((res)=>{
+            
+            if(res.status===203){
+                setWrongUserClass("wrongUser-PtagClass-active")
+
+            }else{
+                setCommentBody("");
+                setUserName("");
+                setComments((currComments)=>[ res.data.addedComment, ...currComments])
+            }
+
         })
-        .catch((err)=>{
-            console.log(err)
-        })
+        
     }
     
    
@@ -52,6 +58,7 @@ function AddComment({setComments}) {
         <input id="userName"  placeholder="please add your Username" value={userName} onChange={(event)=>{ setUserName(event.target.value) }}></input>
     </div>
    
+    <p className={wrongUserClass}>Username not found! </p>
    
         <button>Add</button>
 
