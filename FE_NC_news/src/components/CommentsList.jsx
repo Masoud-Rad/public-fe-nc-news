@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState , useEffect} from 'react'
+import CommentsVotes from "./CommentsVotes"
 
 
 import AddComment from './AddComment';
-import {fetchComments, deleteComment, patchComment} from '../utils'
+import {fetchComments, deleteComment} from '../utils'
 
 
 
@@ -16,10 +17,11 @@ function CommentsList(){
     const [comments, setComments]=useState({})
     const [isLoading, setIsLoading] =useState(true)
     const [dletedCommentClass, setDletedCommentClass]=useState("deletedComment-Ptag")
-    const [clicked, setClicked]=useState(false)
     
+    const [clicked, setClicked]=useState(false);
+    const [currentCommentId, setCurrentCommentId]= useState(0)
 
-    const [commentVoteChanges, setCommentVoteChanges] =useState(0)
+    
 
 
     useEffect(()=>{
@@ -31,6 +33,12 @@ function CommentsList(){
         
     }, [article_id])
 
+    useEffect(()=>{
+       
+        
+    }, [])
+    
+    
 
     function handleDelButton (comment_id){
 
@@ -47,13 +55,11 @@ function CommentsList(){
           })
        
     }
+//-----------------------------------------------------
+    
 
-    function incCommentVotes(comment_id){
 
-        setCommentVoteChanges((currVotes)=>{return currVotes+1} );
-        patchComment(comment_id, { inc_votes : 1 })
-      }
-
+//----------------------------------------------
     if(isLoading){
     return <h2>Loading...!</h2>
     } 
@@ -74,7 +80,8 @@ return (<>
                                         <p>{comment.body}</p>
                                         <h6>Aothor: {comment.author}</h6>
                                         <p>Date:   {comment.created_at}</p>
-                                        <button  onClick={()=>{incCommentVotes(comment.comment_id)}}> votes: {comment.votes+commentVoteChanges}</button>
+                                        <CommentsVotes votes={comment.votes} commentId={comment.comment_id}/>
+                                        
                                         <button  onClick={()=>{handleDelButton(comment.comment_id)}} disabled={clicked}> Delete </button>
 
                                        
