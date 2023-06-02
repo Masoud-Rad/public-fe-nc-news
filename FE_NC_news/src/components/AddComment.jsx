@@ -8,7 +8,9 @@ function AddComment({setComments}) {
 
     const [commentBody, setCommentBody]=useState("")
     const [userName,setUserName]=useState("")
+
     const [wrongUserClass,setWrongUserClass]=useState("wrongUser-PtagClass")
+
 
 
     

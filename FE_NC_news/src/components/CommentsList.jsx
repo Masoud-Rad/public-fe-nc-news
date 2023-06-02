@@ -18,7 +18,9 @@ function CommentsList(){
     const [dletedCommentClass, setDletedCommentClass]=useState("deletedComment-Ptag")
     const [clicked, setClicked]=useState(false)
     
+
     const [commentVoteChanges, setCommentVoteChanges] =useState(0)
+
 
     useEffect(()=>{
         fetchComments(article_id).then((Data)=>{
