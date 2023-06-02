@@ -13,6 +13,7 @@ function CommentsList(){
     const [comments, setComments]=useState({})
     const [isLoading, setIsLoading] =useState(true)
     
+    
     useEffect(()=>{
         fetchComments(article_id).then((Data)=>{
             setComments(Data.comments);

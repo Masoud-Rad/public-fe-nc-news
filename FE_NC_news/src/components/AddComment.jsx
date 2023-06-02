@@ -6,8 +6,9 @@ function AddComment({setComments}) {
 
     const {article_id} = useParams()
 
-const [commentBody, setCommentBody]=useState("")
+    const [commentBody, setCommentBody]=useState("")
     const [userName,setUserName]=useState("")
+    
 
 
     
