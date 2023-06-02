@@ -5,19 +5,19 @@ import {fetchUserByUsername} from "../utils"
 function Sign_In() {
 
     const [enteredUserName,setEnteredUserName]=useState("")
+    const [signUpClass, setSignUpClass]=useState("signUp-PtagClass")
 
 
 
   function handleSubmit(event){
         event.preventDefault();
 
-       
             fetchUserByUsername(enteredUserName).then((response)=>{
     
              
-            //  if(response==404){
-            //     return <p>User not found! please sign up</p>
-            //  }
+             if(response===404){
+                setSignUpClass("signUp-PtagClass-active")
+             }else{}
         
             })
 
@@ -35,7 +35,7 @@ function Sign_In() {
         <input id="username-input"   placeholder="username..." value={enteredUserName} onChange={(event)=>{ setEnteredUserName(event.target.value) }}></input>
     </div>
    
-   
+    <p className={signUpClass}>User not found! please sign up</p>
    
         <button>Log in</button>
 

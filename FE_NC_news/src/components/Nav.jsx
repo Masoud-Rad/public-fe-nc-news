@@ -12,7 +12,7 @@ return <>
         <a href="/articles">Articles</a>
     </div>
     <div>
-        <a href="sign-in">Sign-In</a>
+        <a href="/sign-in">Sign-In</a>
     </div>
     <div>
     <a href="/">Home</a>

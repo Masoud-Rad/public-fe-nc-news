@@ -81,11 +81,36 @@ export const addNewComment = (article_id,postBody)=>{
 
   return  ncNewsApi.post(`/articles/${article_id}/comments`, postBody)
     .then((response)=> {
-      return(response.data);
+      return(response);
     })
     .catch((error) =>{
-      console.log(error.response);
+      console.log(error.status);
     })
+}
+
+export const deleteComment = (commentID)=>{
+
+  return  ncNewsApi.delete(`/comments/${commentID}`).then((res)=>{
+    
+  })
+  .catch((error) =>{
+    // handle error
+    console.log(error.response);
+  })
+
+}
+
+export const patchComment =(comment_id,patchBody)=>{
+
+
+  return  ncNewsApi.patch(`/comments/${comment_id}`, patchBody)
+  .then((response)=> {
+    return(response.data);
+  })
+  .catch((error) =>{
+    console.log(error.response);
+  })
+
 }
 
 //-----------------------------Topics-----------------------------------
