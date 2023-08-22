@@ -1,60 +1,59 @@
-# Northcoders News
+#FE-NC-NEWS Web Application
 
-Northcoders News is a social news aggregation, web content rating, and discussion website.
+FE-NC-NEWS is a web application built using React and React Router, designed to provide users with a platform to explore and interact with news articles, topics, and comments. The application fetches data from an API and displays it in a user-friendly interface.
+Getting Started
 
-Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article.
+To run the FE-NC-NEWS web application on your local machine, follow these steps:
 
-This sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
+    Clone this repository to your local machine using the following command:
 
-## Kanban
+    bash
 
-### Link to your Trello Board here: https://trello.com/b/cEYt2hYP
+git clone https://github.com/your-username/fe-nc-news.git
 
-To keep track of the tasks involved in this project we're going to use a kanban board. Ensure that you work on one _ticket_ at time. You can click on the ticket to find out more information about what is required for the feature. A ticket is not considered complete unless both the happy path and errors response are handled and there is a basic structure to your styling.
+Navigate to the project directory:
 
-**We suggest you work through the tickets from top to bottom.**
+bash
 
-## Available Functionality
+cd fe-nc-news
 
-You will only be able to complete front end tickets that have the associated behaviour implemented in your back end application. For example, you will be unable to complete front end _ticket 10: Sort articles_ if you haven't completed back end _ticket 10: GET /api/articles (queries)_.
-We suggest that you complete _all_ the core task tickets on your front end trello that you are able to at this stage. Once you have done this, you are welcome to return to your back end project one ticket at a time to allow you to continue with front end tickets.
+Install the required dependencies using npm:
 
-## Git Branching and Pull Requests
+bash
 
-You will be working on each ticket on a new **branch**.
+npm install
 
-To create and switch to a new git branch use the command:
+Start the development server:
 
-```
-git checkout -b <new branch name>
-```
+bash
 
-This will create a branch and move over to that branch. (Omit the `-b` flag if you wish to switch to an already existing branch).
+    npm run dev
 
-We recommend that you name the branch something that clearley shows the ticket you are working on. eg. `fe-ncnews-display-articles`
+    Open your web browser and visit http://localhost:3000 to access the application.
 
-When pushing the branch to git hub ensure that you make reference to the branch you are pushing to on the remote.
+##Features
 
-```
-git push origin <branch name>
-```
+    Browse and explore various articles and topics.
+    View detailed information about specific articles.
+    Vote the articles.
+    Access and participate in discussions through comments.
+    Delete your comment.
+    Vote other users' comments.
+    Sort and order articles based on different criteria.
 
-From github you can make a pull request and share the link and ticket number on your `nchelp` with a zoom link for you to demo your feature. A tutor will swing by to review your code. Ensure that you keep your trello up to date whilst you await the PR approval.
+##Dependencies
 
-Once a pull request been accepted be sure to switch back to the main branch and pull down the updated changes.
+The application relies on the following core dependencies:
 
-```
-git checkout main
+    axios: A promise-based HTTP client for making API requests.
+    react: A JavaScript library for building user interfaces.
+    react-router-dom: A library for routing and navigation in React applications.
 
-git pull origin main
-```
+Scripts
 
-You can tidy up your local branches once they have been pull into main by deleting them:
+The following npm scripts are available for development and deployment:
 
-```
-git branch -D <local branch>
-```
-
-## Important
-
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
+    npm run dev: Starts the development server.
+    npm run build: Builds the production-ready application.
+    npm run lint: Lints the source code using ESLint.
+    npm run preview: Previews the production build.
