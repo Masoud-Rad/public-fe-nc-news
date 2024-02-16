@@ -1,6 +1,6 @@
 import { patchComment} from '../utils'
 
-import { useState , useEffect} from 'react'
+import { useState } from 'react'
 
 function CommentsVotes({votes, commentId}){
     const [commentVoteChanges, setCommentVoteChanges] =useState(0)
